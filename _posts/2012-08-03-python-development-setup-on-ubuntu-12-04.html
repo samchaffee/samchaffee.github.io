@@ -1,0 +1,72 @@
+---
+layout: post
+title: Python Development Setup on Ubuntu 12.04
+tags:
+- distribute
+- Flask
+- Installation
+- Python
+- Ubuntu
+- virtualenvwrapper
+- virutalenv
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+---
+<h5>The Backstory</h5>
+Recently, I've had a renewed interest in Python. I had some limited exposure to it during my time as a undergraduate studying GIS as ESRI's ArcGIS supports its use as a scripting/modeling language, but most recently I've been interested in Python for web development.
+
+To that end I started searching for and reading about various Python web frameworks like <a title="Django Web Framework" href="https://www.djangoproject.com/" target="_blank">Django</a>, <a title="Pyramid" href="http://www.pylonsproject.org/" target="_blank">Pyramid</a>, and <a title="Flask" href="http://flask.pocoo.org/" target="_blank">Flask</a>. I spent some time reading documentation and "Hello World" tutorials and decided that I'd like to give them a try starting with Flask.
+
+Invariably, in the course of reading the installation docs for any of these frameworks, you'll come across the mention of at least one of following tools: easy_install, setuptools, distribute, <a title="pip" href="http://www.pip-installer.org/en/latest/index.html" target="_blank">pip</a>, <a title="virtualenv" href="http://www.virtualenv.org/en/latest/index.html" target="_blank">virtualenv</a>, and <a title="virtualenvwrapper" href="http://virtualenvwrapper.readthedocs.org/en/latest/index.html" target="_blank">virtualenvwrapper</a>. It is often the recommendation to use one of these tools in part of the process to install the framework you'd like to work with and its dependencies. And if you dig into the documentation for these tools you'll come across snippets like this:
+<ul>
+	<li>"The recommended way to use pip is within virtualenv, since every virtualenv has pip installed in it automatically." (from the pip documentation)</li>
+	<li>"You can install virtualenv with pip install virtualenv . . ." (from virtualenv docs)</li>
+	<li>"The easiest way to install it is using pip: pip install virtualenvwrapper or sudo install virtualenvwrapper." There is also a note that virtualenv must already be installed. (from virtualenvwrapper docs)</li>
+</ul>
+Now, all this may be child's play for the experienced Python developer, but to me it was a little mind-boggling.  Should I use pip to install virtualenv or virtualenv to install pip? Which is it? If it's the former then how do I install pip? Which just leads us further down the rabbit hole: easy_install, setuptools, distribute!? There was also documentation suggesting to use my linux distribution's package manager to install one or more of the tools. So I did a little more digging and reading and came to a course of action for installing flask in my development environment.
+<h5>The Juice</h5>
+But first, a quick disclaimer. If you haven't figured out from the above that I'm new to all this let this be your notice: I'm new to all this (Python development/package management).
+
+Next, some assumptions I'm using when I lay out the steps below:
+<ol>
+	<li>I'm using a fresh Ubuntu 12.04 Desktop (x386) installed in a VirtualBox virtual machine on a Windows 7 64-bit Ultimate host.</li>
+	<li>I have sudo access in my Ubuntu install and I'm the sole user. In an environment in which you don't have sudo access or you're not the sole user there may be better ways to do this set up. If you don't have sudo/root access you definitely won't be able to follow my steps.</li>
+	<li>I'm using Python 2.7 (which is installed already with the above)</li>
+	<li>I have curl installed: sudo apt-get install curl</li>
+</ol>
+Without further ado, the steps I took to set up Ubuntu 12.04 for web development using a Python framework:
+<ol>
+	<li>Install <a href="http://pypi.python.org/pypi/distribute">distribute</a>. Distribute is a prerequisite for installing pip using the installer. According to its documentation, it is a fork of the Setuptools project and is "intended to replace Setuptools as the standard method for working with Python module distributions." I installed it like this:
+<pre>curl -O http://python-distribute.org/distribute_setup.py</pre>
+<pre>sudo python distribute_setup.py</pre>
+</li>
+	<li>Install <a title="pip" href="http://www.pip-installer.org/en/latest/index.html">pip</a>. According to its docs, "<cite>pip</cite> is a tool for installing and managing Python packages." I installed it like this:
+<pre>curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py</pre>
+<pre>sudo python get-pip.py</pre>
+I chose to install pip as a site package so that I could install site packages with it if I found it prudent to do so versus installing in a virtual environment (as pip is installed with every one by virtualenv). I installed via the installer instead of the package manager because it was a point-release ahead of what is in the package manager and pip can easily be updated to the new version.</li>
+	<li>Install virtualenv as a site package using pip. virtualenv will allow you to create isolated Python environments. I installed it like this:
+<pre>sudo pip install virtualenv</pre>
+</li>
+	<li>Install virtualenvwrapper as a site package using pip. virtualenvwrapper provides some nice extras for creating and managing virtual environments. Make sure you install virtualenv first and then install virtualenvwrapper in the same place (i.e. site packages).
+<pre>sudo pip install virtualenvwrapper</pre>
+</li>
+	<li>Next I did some configuration of virtualenvwrapper. I edited my .bashrc to contain the following:
+<pre>export WORKON_HOME=$HOME/.virtualenvs</pre>
+<pre>export PROJECT_HOME=$HOME/Projects</pre>
+<pre>source /usr/local/bin/virtualenvwrapper.sh</pre>
+This sets the directory where your virtual environments will be created and the directory where your <a title="virtualenvwrapper projects" href="http://virtualenvwrapper.readthedocs.org/en/latest/projects.html#project-management">project</a> files will be created. Apparently you can do some cool stuff with projects like using existing templates, say for a Django project, or creating your own.</li>
+	<li>I configured pip (the site package) a bit. First I add this to my .bashrc:
+<pre>export PIP_REQUIRE_VIRTUALENV=true</pre>
+This is to keep me from accidentally using pip to install site packages when I mean to be installing them in my virtual environment. If in the course of some work I find that I need to use pip to install a site package I can always just set that variable to false, install the site package, and then reset it to true.</li>
+	<li>At this point you can use virtualenvwrapper to create a virtual environment and corresponding project directory using the mkproject command:
+<pre>mkproject flasktest</pre>
+This should create a directory in your projects folder and create and start working on a virtual environment for the project. You should see the name of the virtual environment in parentheses in your command prompt. Now install flask:
+<pre>pip install flask</pre>
+Notice that I didn't need sudo for either of these commands.</li>
+</ol>
+And that's it. We're ready to go now. Your Flask files for this project go in the project folder created by virtualenvwrapper's mkproject command. That is also where you'd initialize any version control repositories. I'm still exploring that bit, but from what I've read I could intialize a Git repository in the project folder and use pip freeze &gt; requirements.txt in the project folder to add the environment dependencies to version control. There may be something that virtualenvwrapper can do to facilitate this, but I haven't looked into that yet. If you know, feel free to leave a comment.
+
+Thanks for following along. I hope this was helpful to someone and if you have any feedback, please leave a comment.

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>PHP Development Setup on Ubuntu 12.04</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Sam Chaffee">
+
+    <!-- Le styles -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/samchaffee.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons 
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets//ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="/ico/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="/">Sam Chaffee</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <ul class="pager">
+              <li class="previous"><a href="/2012/08/03/python-development-setup-on-ubuntu-12-04/"><i class="icon-backward"></i> Older post</a></li>
+              <li class="next"><a href="/2013/10/24/temporarily-disabling-comments/">Newer post <i class="icon-forward"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container well">
+      <div class="row">
+        <div class="span8">
+	<div class="main">
+		<div class="page-header">
+		<h2>PHP Development Setup on Ubuntu 12.04</h2>
+		</div>
+		<p>
+In my last post on <a title="Python Development Setup on Ubuntu 12.04" href="/2012/08/03/python-development-setup-on-ubuntu-12-04/">Python development</a>, I went through the steps I took to set up a virtual machine running Ubuntu 12.04 for web development using the <a href="http://flask.pocoo.org/">Flask</a> Python Microframework. That was an interesting and informative exercise for me and I hope it was for others as well. However, my day-to-day work on Moodle requires that I use PHP, MySQL, and Apache (LAMP stack if you're also using Linux) so today I'd like to go through an easy way to set up a LAMP environment on an Ubuntu 12.04 virtual machine.
+</p>
+<p>
+First, some assumptions/pre-conditions/warnings before I get to the installation:
+<ol>
+	<li>I'm using an Ubuntu 12.04 Desktop (x386) installed in a VirtualBox virtual machine on a Windows 7 64-bit Ultimate host.</li>
+	<li>I have sudo access in my Ubuntu install and I'm the sole user. In an environment in which you don't have sudo access or you're not the sole user there may be better ways to do this set up. If you don't have sudo/root access you definitely won't be able to follow my steps.</li>
+	<li>There are other ways to install a LAMP stack, this is just one way to do it, and may not be the best for you and your specific requirements. <a title="XAMPP" href="http://www.apachefriends.org/en/xampp.html">XAMPP</a> may be a better solution for you if you want to do PHP web development in Windows without the extra steps of setting up a virtual machine, for example.</li>
+</ol>
+</p>
+<p>
+Here we go! I'll be using Debian/Ubuntu's <a title="Ubuntu tasksel documentation" href="https://help.ubuntu.com/community/Tasksel">tasksel</a> command to install the LAMP stack.
+<h5>Install tasksel</h5>
+Tasksel is not installed by default in the desktop version of Ubuntu 12.04 so first we need to install that.
+<pre>sudo apt-get install tasksel</pre>
+That's it, tasksel should be installed now and ready to use.
+</p>
+<p>
+<h5>Install the LAMP packages</h5>
+Now we can use tasksel to install the LAMP packages.
+<pre>sudo tasksel</pre>
+That should bring up super-nice, retro graphical interface in which you can select the "tasks" you'd like to install. Please be aware that already installed tasks will have an asterisk next to them. Don't remove them unless you really mean to.
+</p>
+<p>
+To install the LAMP packages move the cursor to the "LAMP Server" option using the down arrow on your keyboard, select it by pressing space-bar, and then tab down to OK and press Enter. If all goes well you'll be prompted for a password for the MySQL Root user. It is highly advisable to set this password (and remember it)!
+</p>
+<p>
+Did it work? Awesome! Now we can test Apache. Open a browser, type localhost into the address bar and press enter. If it's working you should see an Apache splash page. If not, try restarting Apache:
+<pre>sudo service apache restart</pre>
+If that didn't work, start over! I'm kind of kidding, but not really.
+</p>
+<p>
+<h5>Install phpMyAdmin</h5>
+Now, let's install phpMyAdmin, which is a great web-based GUI to manage and query MySQL databases (yes, you could just use the command line client).
+<pre>sudo apt-get install phpmyadmin</pre>
+You should see this prompt: "Please choose the web server that should automatically be configured to run phpMyAdmin".
+<br />
+Press space on the appropriate box to select apache2 and then press enter.
+<br />
+Then you should see this prompt: "The phpMyAdmin package must have a database installed and configured before it can be used. This can optionally be handled with dbconfig-common...Configure database for phpMyAdmin with dbconfig-common?".
+<br />
+Press enter for yes. (Wow, you're good.)
+<br />
+Next, you'll be prompted for the administrative "root" password with which phpMyAdmin should use to create its table and user. Use previously set password.
+<br />
+Then you'll be asked to set a password that phpMyAdmin should use to connect to MySQL. My advice is to let PMA choose a random password, which should be an option.
+<br />
+Congrats, phpMyAdmin should be all set up. To test it, navigate to localhost/phpmyadmin in a browser.
+</p>
+<p>
+<h5> Add a test file to Apache's document root</h5>
+Earlier, after installed the LAMP server with tasksel we test Apache by navigating to localhost in a browser. Now let's add a test file to the document root (which in Ubuntu is /var/www/) to see how that works.
+
+Use your favorite text editor (with sudo) to edit a file in the document root:
+<pre>sudo vi /var/www/mytest.php</pre>
+Add the following:
+<pre>&lt;?php
+echo 'Hello World';</pre>
+Save the document and navigate to localhost/mytest.php to see if it worked. Voila!
+
+And that's a wrap. Thanks for following along. If you have any questions, comments, or concerns feel free to leave a comment.
+</p>
+	</div>
+</div>
+<div class="span4">
+	<div id="postside" class="sidebar">
+	<div id="tagcloud" class="sidebar-block">
+		<span class="badge badge-inverse"><h4 class="sidetitle">Tags</h4></span>
+		<div id="tags">
+			
+			<span>Apache</span>
+			
+			<span>LAMP</span>
+			
+			<span>Linux</span>
+			
+			<span>Moodle</span>
+			
+			<span>MySQL</span>
+			
+			<span>PHP</span>
+			
+			<span>phpMyAdmin</span>
+			
+			<span>Ubuntu</span>
+			
+		</div>
+	</div>
+	<div id="relatedposts" class="sidebar-block">
+		<span class="badge badge-inverse"><h4 class="sidetitle">Related posts</h4></span>
+	    <div>
+	    	<ul class="unstyled">
+				
+				<li><a href="/2013/10/24/temporarily-disabling-comments/">Temporarily disabling comments</a></li>
+				
+				<li><a href="/2012/08/03/python-development-setup-on-ubuntu-12-04/">Python Development Setup on Ubuntu 12.04</a></li>
+				
+				<li><a href="/2012/03/10/go-ahead-rtfm-its-new-improved/">Go Ahead, RTFM, It's New & Improved</a></li>
+				
+				<li><a href="/2012/02/19/welcome/">Welcome!</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</div>
+</div>
+      </div>
+    </div> <!-- /container -->
+    <div id="footer" class="container">
+    <span>© Sam Chaffee 2014</span>
+    </div>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/jquery-1.9.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body></html>

@@ -1,0 +1,79 @@
+---
+layout: post
+title: PHP Development Setup on Ubuntu 12.04
+tags:
+- Apache
+- LAMP
+- Linux
+- Moodle
+- MySQL
+- PHP
+- phpMyAdmin
+- Ubuntu
+status: publish
+type: post
+published: true
+---
+<p>
+In my last post on <a title="Python Development Setup on Ubuntu 12.04" href="{% post_url 2012-08-03-python-development-setup-on-ubuntu-12-04 %}">Python development</a>, I went through the steps I took to set up a virtual machine running Ubuntu 12.04 for web development using the <a href="http://flask.pocoo.org/">Flask</a> Python Microframework. That was an interesting and informative exercise for me and I hope it was for others as well. However, my day-to-day work on Moodle requires that I use PHP, MySQL, and Apache (LAMP stack if you're also using Linux) so today I'd like to go through an easy way to set up a LAMP environment on an Ubuntu 12.04 virtual machine.
+</p>
+<p>
+First, some assumptions/pre-conditions/warnings before I get to the installation:
+<ol>
+	<li>I'm using an Ubuntu 12.04 Desktop (x386) installed in a VirtualBox virtual machine on a Windows 7 64-bit Ultimate host.</li>
+	<li>I have sudo access in my Ubuntu install and I'm the sole user. In an environment in which you don't have sudo access or you're not the sole user there may be better ways to do this set up. If you don't have sudo/root access you definitely won't be able to follow my steps.</li>
+	<li>There are other ways to install a LAMP stack, this is just one way to do it, and may not be the best for you and your specific requirements. <a title="XAMPP" href="http://www.apachefriends.org/en/xampp.html">XAMPP</a> may be a better solution for you if you want to do PHP web development in Windows without the extra steps of setting up a virtual machine, for example.</li>
+</ol>
+</p>
+<p>
+Here we go! I'll be using Debian/Ubuntu's <a title="Ubuntu tasksel documentation" href="https://help.ubuntu.com/community/Tasksel">tasksel</a> command to install the LAMP stack.
+<h5>Install tasksel</h5>
+Tasksel is not installed by default in the desktop version of Ubuntu 12.04 so first we need to install that.
+<pre>sudo apt-get install tasksel</pre>
+That's it, tasksel should be installed now and ready to use.
+</p>
+<p>
+<h5>Install the LAMP packages</h5>
+Now we can use tasksel to install the LAMP packages.
+<pre>sudo tasksel</pre>
+That should bring up super-nice, retro graphical interface in which you can select the "tasks" you'd like to install. Please be aware that already installed tasks will have an asterisk next to them. Don't remove them unless you really mean to.
+</p>
+<p>
+To install the LAMP packages move the cursor to the "LAMP Server" option using the down arrow on your keyboard, select it by pressing space-bar, and then tab down to OK and press Enter. If all goes well you'll be prompted for a password for the MySQL Root user. It is highly advisable to set this password (and remember it)!
+</p>
+<p>
+Did it work? Awesome! Now we can test Apache. Open a browser, type localhost into the address bar and press enter. If it's working you should see an Apache splash page. If not, try restarting Apache:
+<pre>sudo service apache restart</pre>
+If that didn't work, start over! I'm kind of kidding, but not really.
+</p>
+<p>
+<h5>Install phpMyAdmin</h5>
+Now, let's install phpMyAdmin, which is a great web-based GUI to manage and query MySQL databases (yes, you could just use the command line client).
+<pre>sudo apt-get install phpmyadmin</pre>
+You should see this prompt: "Please choose the web server that should automatically be configured to run phpMyAdmin".
+<br />
+Press space on the appropriate box to select apache2 and then press enter.
+<br />
+Then you should see this prompt: "The phpMyAdmin package must have a database installed and configured before it can be used. This can optionally be handled with dbconfig-common...Configure database for phpMyAdmin with dbconfig-common?".
+<br />
+Press enter for yes. (Wow, you're good.)
+<br />
+Next, you'll be prompted for the administrative "root" password with which phpMyAdmin should use to create its table and user. Use previously set password.
+<br />
+Then you'll be asked to set a password that phpMyAdmin should use to connect to MySQL. My advice is to let PMA choose a random password, which should be an option.
+<br />
+Congrats, phpMyAdmin should be all set up. To test it, navigate to localhost/phpmyadmin in a browser.
+</p>
+<p>
+<h5> Add a test file to Apache's document root</h5>
+Earlier, after installed the LAMP server with tasksel we test Apache by navigating to localhost in a browser. Now let's add a test file to the document root (which in Ubuntu is /var/www/) to see how that works.
+
+Use your favorite text editor (with sudo) to edit a file in the document root:
+<pre>sudo vi /var/www/mytest.php</pre>
+Add the following:
+<pre>&lt;?php
+echo 'Hello World';</pre>
+Save the document and navigate to localhost/mytest.php to see if it worked. Voila!
+
+And that's a wrap. Thanks for following along. If you have any questions, comments, or concerns feel free to leave a comment.
+</p>

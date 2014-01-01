@@ -1,0 +1,20 @@
+---
+layout: default
+title: Sam Chaffee
+subtitle: On Moodle Development & Web Technologies, Ad Nauseum
+---
+<div class="span8">
+	<div class="main">
+		<h3>Latest Blog Posts</h3>
+		{% for post in site.posts %}
+		  <div class="post">
+		    <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+		    <div>Posted on {{ post.date | date_to_string }}</div>
+		    <div>{{ post.content | strip_html | truncatewords: 45 }}</div>
+		  </div>
+		{% endfor %}
+	</div>
+</div>
+<div class="span4">
+	{% include about.html %}
+</div>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Go Ahead, RTFM, It's New & Improved</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Sam Chaffee">
+
+    <!-- Le styles -->
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="/css/samchaffee.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons 
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets//ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">-->
+    <link rel="shortcut icon" href="/ico/favicon.png">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="/">Sam Chaffee</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="row">
+        <div class="span12">
+          <ul class="pager">
+              <li class="previous"><a href="/2012/02/19/welcome/"><i class="icon-backward"></i> Older post</a></li>
+              <li class="next"><a href="/2012/08/03/python-development-setup-on-ubuntu-12-04/">Newer post <i class="icon-forward"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container well">
+      <div class="row">
+        <div class="span8">
+	<div class="main">
+		<div class="page-header">
+		<h2>Go Ahead, RTFM, It's New & Improved</h2>
+		</div>
+		<p>
+One frustrating aspect of working with any open-source project can be the lack of thorough documentation.  This is especially true of an open-source project with a code-base the size of Moodle's. An off-hand, quick count shows that in Moodle 2.2 there are over 30 core APIs! That is a lot classes, methods, and functions to try to keep track of when you're developing a new plugin, trying to make improvements to an existing plugin, or certainly when upgrading a plugin from an older version of Moodle (mostly during a 1.x to 2.x upgrade). Fortunately, Moodle HQ has done an excellent job recently updating its documentation. Let's take a look at some of the improvements they've made.
+</p>
+<p>
+First, head over to <a title="Moodle.org Docs" href="http://docs.moodle.org">docs.moodle.org</a>, as this is where all Moodle.org documentation lives. The first thing I noticed is that it is much, <strong>much, </strong>easier get to the development docs than in previous iterations of the site. You'll land on the main page for Moodle 2.2 documentation (the most recent version at the time of this blog post) and in the first paragraph listing links for docs for older versions, you'll also find the link to the developer documentation, "<a title="Moodle Developer Docs" href="http://docs.moodle.org/dev/Main_Page">Moodle developer documentation</a>". Wow, that is easy. It's also linked at the bottom of the page if you get scroll happy and miss the first one. Fantastic!
+</p>
+<p>
+Now that we've landed on the main page of the developer docs, the first thing you'll notice is the vastly improved over-all organization. The page is grouped into six bulleted lists: "Overview", "Plugin development", "Core APIs", "Guidelines", "Developer tools", and "Projects". Again, this is a great improvement over the old style of listing almost all sub-pages in alphabetical order with no other organization to speak of. If I were a new Moodle developer I'd be most interested in checking out "Guidelines", "Developer tools", "Plugin development", and "Core APIs". I'll likely take some time in future posts to talk about the importance and main take-aways of each of these, but what I've been most excited about is the "Core APIs" section of the docs. Let's take a look.
+</p>
+<p>
+If you haven't yet, point another browser tab to the "<a title="Moodle Dev Core APIs" href="http://docs.moodle.org/dev/Core_APIs">Core APIs</a>" page of the docs. BAM!! Right away, there is a beautiful table of contents that someone has painstakingly organized for your perusing pleasure. At the top level it's broken down to "Most-used General APIs", "Other General APIs", and "Activity Module APIs". Clicking on any of the links takes you to brief description of the API and a link to meat of it. Again, in future posts I hope to dig a little bit deeper into some of these, but if I had to pick a couple to personally thanks Moodle HQ for updating it would be the "Events API" (for firing and handling events), the "File API" (for navigating Moodle's "new" file handling), and the "Backup API" (for backing up and restoring your plugins' data). There are certainly other APIs that I use more often such as the "Output API", the "String API", and the "Access API", but it is exactly because I use them more frequently that I don't need documentation like I do for the others. If you are just beginning your adventure in Moodle development then you can't go wrong taking at least a quick look at all of these APIs.
+</p>
+<p>
+I hope this little jaunt through some of Moodle.org's new and improved developer documentation is as exciting and helpful to you as it was to me. When you're neck-deep in a project and you know in the back of your mind that there is some class/method/function for what you're trying to do, you'll be glad that Moodle HQ has spent the time and effort to reorganize them the way they have.
+</p>
+	</div>
+</div>
+<div class="span4">
+	<div id="postside" class="sidebar">
+	<div id="tagcloud" class="sidebar-block">
+		<span class="badge badge-inverse"><h4 class="sidetitle">Tags</h4></span>
+		<div id="tags">
+			
+			<span>API</span>
+			
+			<span>Developer</span>
+			
+			<span>Documentation</span>
+			
+			<span>Improved</span>
+			
+			<span>Moodle</span>
+			
+		</div>
+	</div>
+	<div id="relatedposts" class="sidebar-block">
+		<span class="badge badge-inverse"><h4 class="sidetitle">Related posts</h4></span>
+	    <div>
+	    	<ul class="unstyled">
+				
+				<li><a href="/2013/10/24/temporarily-disabling-comments/">Temporarily disabling comments</a></li>
+				
+				<li><a href="/2012/11/25/php-development-setup-on-ubuntu-12-04/">PHP Development Setup on Ubuntu 12.04</a></li>
+				
+				<li><a href="/2012/08/03/python-development-setup-on-ubuntu-12-04/">Python Development Setup on Ubuntu 12.04</a></li>
+				
+				<li><a href="/2012/02/19/welcome/">Welcome!</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</div>
+</div>
+      </div>
+    </div> <!-- /container -->
+    <div id="footer" class="container">
+    <span>© Sam Chaffee 2014</span>
+    </div>
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/jquery-1.9.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body></html>

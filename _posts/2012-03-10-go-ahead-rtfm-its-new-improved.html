@@ -1,0 +1,30 @@
+---
+layout: post
+title: Go Ahead, RTFM, It's New & Improved
+tags:
+- API
+- Developer
+- Documentation
+- Improved
+- Moodle
+status: publish
+type: post
+published: true
+meta:
+  _edit_last: '2'
+---
+<p>
+One frustrating aspect of working with any open-source project can be the lack of thorough documentation.  This is especially true of an open-source project with a code-base the size of Moodle's. An off-hand, quick count shows that in Moodle 2.2 there are over 30 core APIs! That is a lot classes, methods, and functions to try to keep track of when you're developing a new plugin, trying to make improvements to an existing plugin, or certainly when upgrading a plugin from an older version of Moodle (mostly during a 1.x to 2.x upgrade). Fortunately, Moodle HQ has done an excellent job recently updating its documentation. Let's take a look at some of the improvements they've made.
+</p>
+<p>
+First, head over to <a title="Moodle.org Docs" href="http://docs.moodle.org">docs.moodle.org</a>, as this is where all Moodle.org documentation lives. The first thing I noticed is that it is much, <strong>much, </strong>easier get to the development docs than in previous iterations of the site. You'll land on the main page for Moodle 2.2 documentation (the most recent version at the time of this blog post) and in the first paragraph listing links for docs for older versions, you'll also find the link to the developer documentation, "<a title="Moodle Developer Docs" href="http://docs.moodle.org/dev/Main_Page">Moodle developer documentation</a>". Wow, that is easy. It's also linked at the bottom of the page if you get scroll happy and miss the first one. Fantastic!
+</p>
+<p>
+Now that we've landed on the main page of the developer docs, the first thing you'll notice is the vastly improved over-all organization. The page is grouped into six bulleted lists: "Overview", "Plugin development", "Core APIs", "Guidelines", "Developer tools", and "Projects". Again, this is a great improvement over the old style of listing almost all sub-pages in alphabetical order with no other organization to speak of. If I were a new Moodle developer I'd be most interested in checking out "Guidelines", "Developer tools", "Plugin development", and "Core APIs". I'll likely take some time in future posts to talk about the importance and main take-aways of each of these, but what I've been most excited about is the "Core APIs" section of the docs. Let's take a look.
+</p>
+<p>
+If you haven't yet, point another browser tab to the "<a title="Moodle Dev Core APIs" href="http://docs.moodle.org/dev/Core_APIs">Core APIs</a>" page of the docs. BAM!! Right away, there is a beautiful table of contents that someone has painstakingly organized for your perusing pleasure. At the top level it's broken down to "Most-used General APIs", "Other General APIs", and "Activity Module APIs". Clicking on any of the links takes you to brief description of the API and a link to meat of it. Again, in future posts I hope to dig a little bit deeper into some of these, but if I had to pick a couple to personally thanks Moodle HQ for updating it would be the "Events API" (for firing and handling events), the "File API" (for navigating Moodle's "new" file handling), and the "Backup API" (for backing up and restoring your plugins' data). There are certainly other APIs that I use more often such as the "Output API", the "String API", and the "Access API", but it is exactly because I use them more frequently that I don't need documentation like I do for the others. If you are just beginning your adventure in Moodle development then you can't go wrong taking at least a quick look at all of these APIs.
+</p>
+<p>
+I hope this little jaunt through some of Moodle.org's new and improved developer documentation is as exciting and helpful to you as it was to me. When you're neck-deep in a project and you know in the back of your mind that there is some class/method/function for what you're trying to do, you'll be glad that Moodle HQ has spent the time and effort to reorganize them the way they have.
+</p>
