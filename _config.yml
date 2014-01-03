@@ -1,2 +1,2 @@
 permalink: pretty
-exclude: [Vagrantfile]
+exclude: [Vagrantfile, README.md]
