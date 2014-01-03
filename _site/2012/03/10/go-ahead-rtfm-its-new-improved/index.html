@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <title>Go Ahead, RTFM, It's New & Improved</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,44 +15,42 @@
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
     </style>
-    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="/css/samchaffee.css" rel="stylesheet">
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src="../assets/js/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
-
-    <!-- Fav and touch icons 
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets//ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">-->
     <link rel="shortcut icon" href="/ico/favicon.png">
   </head>
 
   <body>
-
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="/">Sam Chaffee</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="active"><a href="/"><i class="icon-home icon-white"></i> Home</a></li>
-            </ul>
-          </div><!--/.nav-collapse -->
+          <a class="navbar-brand" href="/">Sam Chaffee</a>
         </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/">Home</a></li>
+            <!-- <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
+    <div id="wrap">
     
     <div class="container">
       <div class="row">
-        <div class="span12">
+        <div class="col-xs-12">
           <ul class="pager">
               <li class="previous"><a href="/2012/02/19/welcome/"><i class="icon-backward"></i> Older post</a></li>
               <li class="next"><a href="/2012/08/03/python-development-setup-on-ubuntu-12-04/">Newer post <i class="icon-forward"></i></a></li>
@@ -59,14 +59,13 @@
       </div>
     </div>
     
-    <div class="container well">
+    <div class="container">
       <div class="row">
-        <div class="span8">
-	<div class="main">
-		<div class="page-header">
-		<h2>Go Ahead, RTFM, It's New & Improved</h2>
-		</div>
-		<p>
+        <div id="post" class="col-xs-12 col-sm-9">
+	<div class="page-header">
+	<h2>Go Ahead, RTFM, It's New & Improved</h2>
+	</div>
+	<p>
 One frustrating aspect of working with any open-source project can be the lack of thorough documentation.  This is especially true of an open-source project with a code-base the size of Moodle's. An off-hand, quick count shows that in Moodle 2.2 there are over 30 core APIs! That is a lot classes, methods, and functions to try to keep track of when you're developing a new plugin, trying to make improvements to an existing plugin, or certainly when upgrading a plugin from an older version of Moodle (mostly during a 1.x to 2.x upgrade). Fortunately, Moodle HQ has done an excellent job recently updating its documentation. Let's take a look at some of the improvements they've made.
 </p>
 <p>
@@ -81,9 +80,8 @@ If you haven't yet, point another browser tab to the "<a title="Moodle Dev Core 
 <p>
 I hope this little jaunt through some of Moodle.org's new and improved developer documentation is as exciting and helpful to you as it was to me. When you're neck-deep in a project and you know in the back of your mind that there is some class/method/function for what you're trying to do, you'll be glad that Moodle HQ has spent the time and effort to reorganize them the way they have.
 </p>
-	</div>
 </div>
-<div class="span4">
+<div id="sidebar" class="col-xs-12 col-md-3">
 	<div id="postside" class="sidebar">
 	<div id="tagcloud" class="sidebar-block">
 		<span class="badge badge-inverse"><h4 class="sidetitle">Tags</h4></span>
@@ -121,12 +119,16 @@ I hope this little jaunt through some of Moodle.org's new and improved developer
 </div>
       </div>
     </div> <!-- /container -->
-    <div id="footer" class="container">
-    <span>© Sam Chaffee 2014</span>
+  </div> <!-- /wrap -->
+
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted">© Sam Chaffee 2014</p>
+      </div>
     </div>
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/jquery-1.9.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
 </body></html>

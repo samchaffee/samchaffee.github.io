@@ -2,14 +2,12 @@
 layout: default
 haspager: true
 ---
-<div class="span8">
-	<div class="main">
-		<div class="page-header">
-		<h2>{{page.title}}</h2>
-		</div>
-		{{content}}
+<div id="post" class="col-xs-12 col-sm-9">
+	<div class="page-header">
+	<h2>{{page.title}}</h2>
 	</div>
+	{{content}}
 </div>
-<div class="span4">
+<div id="sidebar" class="col-xs-12 col-md-3">
 	{% include postside.html %}
 </div>
