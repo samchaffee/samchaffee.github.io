@@ -5,6 +5,7 @@ haspager: true
 <div id="post" class="col-xs-12 col-sm-9">
 	<div class="page-header">
 	<h2>{{page.title}}</h2>
+	<h5 class="post-date">Posted on {{ page.date | date_to_string }}</h5>
 	</div>
 	{{content}}
 </div>
