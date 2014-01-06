@@ -73,3 +73,5 @@ body {
 .post-date {
 	font-weight: bold;
 }
+
+#map { height: 500px; }

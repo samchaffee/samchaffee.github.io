@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
-    <title>Temporarily disabling comments</title>
+    <title>Leaflet test map</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Sam Chaffee">
@@ -16,6 +16,9 @@
       }
     </style>
     <link href="/css/samchaffee.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+    <link rel="stylesheet" href="/css/testmap.css" />
     
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -53,8 +56,8 @@
       <div class="row">
         <div class="col-xs-12">
           <ul class="pager">
-              <li class="previous"><a href="/2012/11/25/php-development-setup-on-ubuntu-12-04/"><i class="icon-backward"></i> Older post</a></li>
-              <li class="next"><a href="/2014/01/05/test-map/">Newer post <i class="icon-forward"></i></a></li>
+              <li class="previous"><a href="/2013/10/24/temporarily-disabling-comments/"><i class="icon-backward"></i> Older post</a></li>
+              
           </ul>
         </div>
       </div>
@@ -64,16 +67,27 @@
       <div class="row">
         <div id="post" class="col-xs-12 col-sm-9">
 	<div class="page-header">
-	<h2>Temporarily disabling comments</h2>
-	<h5 class="post-date">Posted on 24 Oct 2013</h5>
+	<h2>Leaflet test map</h2>
+	<h5 class="post-date">Posted on 05 Jan 2014</h5>
 	</div>
-	<p>I'm temporarily disabling commenting on the site until an upcoming migration is done. When it's completed I'll re-enable and all you spam-bots can go back to trying to get me to buy fake Gucci bags and Viagra.</p>
+	<p>Testing out adding the <a href="http://leafletjs.com/">Leaflet</a> quick start map to the new Jekyll-powered blog. This is pretty sweet. I'm not entirely sure why yet, but to get the map to play nice with Bootstrap, I had to put a space in the map div. This may not have been necessary now that there is text here in the blog entry, but if it just the map is on the page, it's necessary. This example differs from the Leaflet quick start only in that it uses OpenStreetMap tiles directly rather than through Cloudmade.</p>
+<div id='map'> </div>
 </div>
 <div id="sidebar" class="col-xs-12 col-md-3">
 	<div id="postside" class="sidebar">
 	<div id="tagcloud" class="sidebar-block">
 		<span class="badge badge-inverse"><h4 class="sidetitle">Tags</h4></span>
 		<div id="tags">
+			
+			<span>Map</span>
+			
+			<span>Leaflet</span>
+			
+			<span>Jekyll</span>
+			
+			<span>Bootstrap</span>
+			
+			<span>OpenStreetMap</span>
 			
 		</div>
 	</div>
@@ -82,7 +96,7 @@
 	    <div>
 	    	<ul class="unstyled">
 				
-				<li><a href="/2014/01/05/test-map/">Leaflet test map</a></li>
+				<li><a href="/2013/10/24/temporarily-disabling-comments/">Temporarily disabling comments</a></li>
 				
 				<li><a href="/2012/11/25/php-development-setup-on-ubuntu-12-04/">PHP Development Setup on Ubuntu 12.04</a></li>
 				
@@ -111,5 +125,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+    <script src="/js/testmap.js"></script>
     
 </body></html>

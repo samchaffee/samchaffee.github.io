@@ -16,6 +16,10 @@
       }
     </style>
     <link href="/css/samchaffee.css" rel="stylesheet">
+    {% if page.map %}
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+    <link rel="stylesheet" href="/css/{{ page.mapid }}.css" />
+    {% endif %}
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -76,4 +80,8 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    {% if page.map %}
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+    <script src="/js/{{ page.mapid }}.js"></script>
+    {% endif %}
 </body></html>
