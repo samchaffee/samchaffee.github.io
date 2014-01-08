@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Temporarily disabling comments
+description: A notice that comments would be temporarily disabled on samchaffee.com.
 status: publish
 type: post
 published: true

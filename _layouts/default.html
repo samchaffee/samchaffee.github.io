@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>{{page.title}}{% if page.subtitle %} | {{page.subtitle}} {% endif %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <meta name="description" content="{{ page.description }}">
     <meta name="author" content="Sam Chaffee">
 
     <!-- Le styles -->
@@ -16,7 +16,7 @@
       }
     </style>
     <link href="/css/samchaffee.css" rel="stylesheet">
-    {% if page.map %}
+    {% if page.mapid %}
     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
     <link rel="stylesheet" href="/css/{{ page.mapid }}.css" />
     {% endif %}
@@ -80,7 +80,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    {% if page.map %}
+    {% if page.mapid %}
     <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
     <script src="/js/{{ page.mapid }}.js"></script>
     {% endif %}

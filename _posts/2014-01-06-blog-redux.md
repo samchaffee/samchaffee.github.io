@@ -5,6 +5,7 @@ tags:
 - Jekyll
 - Bootstrap
 - Github
+description: This is the relaunch of samchaffee.com now powered by Jekyll and hosted on Github Pages.
 status: publish
 type: post
 published: true
