@@ -75,3 +75,9 @@ body {
 }
 
 #map { height: 500px; }
+
+#disqus_thread {
+    border-top: 1px solid #eeeeee;
+    margin-top: .5em;
+    padding-top: .5em;
+}
