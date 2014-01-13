@@ -1,0 +1,27 @@
+---
+layout: nil
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">We Don't Need Roads</title>
+  <subtitle type="text">Personal musings of Sam Chaffee</subtitle>
+ <updated>{% assign recentpost = site.posts | first %}{{ recentpost.date | date: '%Y-%m-%dT%H%M' }}{{ site.tzoffset }}</updated>
+ <id>http://samchaffee.com/</id>
+ <link rel="alternate" type="text/html" hreflang="en" href="http://samchaffee.com/"/>
+ <link rel="self" type="application/atom+xml" href="http://samchaffee.com/atom.xml"/>
+
+ {% for post in site.posts %}
+ <entry>
+   <title>{{ post.title | xml_escape }}</title>
+   <link rel="alternate" type="text/html"
+    href="http://samchaffee.com{{ post.url }}"/>
+   <id>http://samchaffee.com{{ post.url }}</id>
+   <updated>{{ post.date | date: '%Y-%m-%dT%H%M' }}{{ site.tzoffset }}</updated>
+   <author>
+     <name>Sam Chaffee</name>
+     <uri>http://samchaffee.com/</uri>
+   </author>
+   <summary>{{ post.description | xml_escape }}</summary>
+ </entry>
+{% endfor %}
+</feed>
