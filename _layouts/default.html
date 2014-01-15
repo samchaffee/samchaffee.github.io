@@ -79,7 +79,9 @@
 
     <div id="footer">
       <div class="container">
-        <p class="text-muted">© Sam Chaffee {{site.time | date: "%Y"}}<span class="pull-right">Powered by <a href="http://jekyllrb.com/">Jekyll</a></span></p>
+        <p class="text-muted">© Sam Chaffee {{site.time | date: "%Y"}}
+          <span class="pull-right"> <a href="http://validator.w3.org/feed/check.cgi?url=http%3A//samchaffee.com/atom.xml">Validate my Atom 1.0 feed</a> | Powered by <a href="http://jekyllrb.com/">Jekyll</a></span>
+        </p>
       </div>
     </div>
     <!-- Le javascript
@@ -91,4 +93,5 @@
     <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
     <script src="/js/{{ page.mapid }}.js"></script>
     {% endif %}
-</body></html>
+  </body>
+</html>
