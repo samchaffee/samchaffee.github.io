@@ -7,14 +7,14 @@ layout: null
   <subtitle type="text">Personal musings of Sam Chaffee</subtitle>
  <updated>{% assign recentpost = site.posts | first %}{{ recentpost.date | date: '%Y-%m-%dT%H:%M:%S' }}{{ site.tzoffset }}</updated>
  <id>http://blog.samchaffee.com/</id>
- <link rel="alternate" type="text/html" hreflang="en" href="http://samchaffee.com/"/>
- <link rel="self" type="application/atom+xml" href="http://samchaffee.com/atom.xml"/>
+ <link rel="alternate" type="text/html" hreflang="en" href="http://blog.samchaffee.com/"/>
+ <link rel="self" type="application/atom+xml" href="http://blog.samchaffee.com/atom.xml"/>
 
  {% for post in site.posts %}
  <entry>
    <title>{{ post.title | xml_escape }}</title>
    <link rel="alternate" type="text/html"
-    href="http://samchaffee.com{{ post.url }}"/>
+    href="http://blog.samchaffee.com{{ post.url }}"/>
    <id>http://blog.samchaffee.com{{ post.url }}</id>
    <updated>{{ post.date | date: '%Y-%m-%dT%H:%M:%S' }}{{ site.tzoffset }}</updated>
    <author>
