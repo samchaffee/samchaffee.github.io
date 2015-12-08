@@ -19,7 +19,7 @@
     </style>
     <link href="/css/samchaffee.css" rel="stylesheet">
     {% if page.mapid %}
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
     <link rel="stylesheet" href="/css/{{ page.mapid }}.css" />
     {% endif %}
 
@@ -58,18 +58,6 @@
       </div>
     </div>
     <div id="wrap">
-    {% if page.haspager %}
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <ul class="pager">
-              {% if page.previous != null %}<li class="previous"><a href="{{ page.previous.url }}"><i class="icon-backward"></i> Older post</a></li>{% endif %}
-              {% if page.next != null %}<li class="next"><a href="{{ page.next.url }}">Newer post <i class="icon-forward"></i></a></li>{% endif %}
-          </ul>
-        </div>
-      </div>
-    </div>
-    {% endif %}
     <div class="container">
       <div class="row">
         {{content}}
@@ -90,7 +78,7 @@
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     {% if page.mapid %}
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
     <script src="/js/{{ page.mapid }}.js"></script>
     {% endif %}
   </body>
