@@ -18,13 +18,11 @@ First, I added commenting back to the blog using [Disqus](http://disqus.com/). D
 
  The only required Disqus configuration is the \"disqus_shortname\" variable, however if you do not supply the \"disqus_identifier\" variable the embed code uses the page url as the identifier. This means that the identifier will be different for your local site and your production site which means comments in one won\'t show in the other and that your Disqus dashboard for the site will show twice the actual number of discussions. That may be what you want, but it wasn\'t what I wanted. Here is an example configuration using Jekyll:
 
-{% highlight js %}
-{% raw %}
+{% highlight javascript %}
 /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 var disqus_shortname = 'yourshortname'; // required: replace example with your forum shortname
 var disqus_identifier = "{{ page.url | split:'/' | join:'-' | remove_first:'-' }}";
 var disqus_title = "{{ page.title }} | {{ page.subtitle }}";
-{% endraw %}
 {% endhighlight %}
 
 <div class="alert alert-warning">As a side note, I realized afterwards that Jekyll's page.id variable would have worked for the disqus_identifier just as well as the parsing of the page url that I did.</div>
