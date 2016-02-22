@@ -1,4 +1,3 @@
 permalink: pretty
 tzoffset: '-07:00'
-highlighter: pygments
 exclude: [Vagrantfile, README.md, manifests, CNAME]
