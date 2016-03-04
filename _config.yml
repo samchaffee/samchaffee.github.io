@@ -1,3 +1,5 @@
 permalink: pretty
 tzoffset: '-07:00'
-exclude: [Vagrantfile, README.md, manifests, CNAME]
+exclude: [README.md, CNAME]
+gems:
+  - jekyll-sitemap

@@ -3,3 +3,4 @@ Vagrantfile
 _site/
 _drafts/
 manifests/
+.keep
