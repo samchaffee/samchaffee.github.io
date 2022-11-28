@@ -1,19 +1,5 @@
 ---
-layout: default
-title: We Don't Need Roads
+layout: home
 subtitle: Personal musings of Sam Chaffee
 description: This is the personal blog of Sam Chaffee. I'm a software engineering director with Open LMS. I have a background in GIS and an interest in open-source software and technology.
 ---
-<div class="col-xs-12 col-sm-9">
-	<h2>Latest Blog Posts</h2>
-	{% for post in site.posts %}
-	  <div class="post">
-	    <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
-	    <div class="post-date">Posted on {{ post.date | date_to_string }}</div>
-	    <div>{{ post.content | strip_html | truncatewords: 45 }}{% assign wordcount = post.content | number_of_words %}{% if wordcount > 45 %}<a href="{{ post.url }}">read more</a>{% endif %}</div>
-	  </div>
-	{% endfor %}
-</div>
-<div id="sidebar" class="col-xs-12 col-md-3">
-	{% include about.html %}
-</div>

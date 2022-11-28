@@ -7,7 +7,6 @@ tags:
 - Github
 description: This is the relaunch of samchaffee.com now powered by Jekyll and hosted on Github Pages.
 status: publish
-type: post
 published: true
 ---
 Finally, *finally*! I\'ve migrated my blog from a Wordpress install hosted on some shared hosting to a [Jekyll-powered](http://jekyllrb.com/) blog hosted on [Github Pages](http://pages.github.com/). Setting up the custom domain was a simple task as it is well documented in the Github Pages help. Currently, I\'m running Jekyll locally for testing and for drafting posts. I\'ll probably stick with that in the future as I\'d like to potentially add some plugins, which aren\'t supported in Pages. I\'ll be using [Bootstrap](http://getbootstrap.com/) for responsive design and styling as web design is not something I\'m particularly interested in focusing on right now.

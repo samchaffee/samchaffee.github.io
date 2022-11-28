@@ -4,3 +4,4 @@ _site/
 _drafts/
 manifests/
 .keep
+Gemfile.lock

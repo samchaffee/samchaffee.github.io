@@ -10,7 +10,6 @@ tags:
 - Github Pages
 - Windows
 status: publish
-type: post
 ---
 I recently started futzing around with this blog again and ran into problems with differences between my local [Jekyll](https://jekyllrb.com/) setup and Github Pages (where this is generated and hosted). My home computer runs Windows 10 so nice things like Homebrew and Macports weren't available to me. Because of that I decided to "redesign" my local setup to use Vagrant, Puppet (just to learn something new) and the Github Pages gem.
 
