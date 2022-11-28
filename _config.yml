@@ -4,16 +4,11 @@ permalink: pretty
 exclude: [README.md, CNAME, Gemfile, Gemfile.lock]
 remote_theme: jekyll/minima
 minima:
-  skin: solarized-light
+  skin: solarized-dark
   social_links:
     - { platform: github,  user_url: "https://github.com/samchaffee" }
     - { platform: mastodon, user_url: "https://indieweb.social/@samchaffee" }
     - { platform: linkedin, user_url: "https://www.linkedin.com/in/samchaffee" }
-github_username: samchaffee
-linkedin_username: samchaffee
-mastodon:
-  - username: samchaffee
-    instance: indieweb.social
 show_excerpts: true
 plugins:
   - jekyll-sitemap
