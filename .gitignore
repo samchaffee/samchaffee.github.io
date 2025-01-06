@@ -5,3 +5,4 @@ _drafts/
 manifests/
 .keep
 Gemfile.lock
+.ruby-version
