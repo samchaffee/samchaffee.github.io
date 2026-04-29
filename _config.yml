@@ -1,16 +1,24 @@
 title: We Don't Need Roads
 description: This is the personal blog of Sam Chaffee. I'm a software engineering director with Open LMS. I have a background in GIS and an interest in open-source software and technology.
 permalink: pretty
-exclude: [README.md, CNAME, Gemfile, Gemfile.lock]
-remote_theme: jekyll/minima
-minima:
-  skin: classic
-  social_links:
-    - { platform: github,  user_url: "https://github.com/samchaffee" }
-    - { platform: bluesky, user_url: "https://bsky.app/profile/samchaffee.com" }
-    - { platform: mastodon, user_url: "https://indieweb.social/@samchaffee" }
-    - { platform: linkedin, user_url: "https://www.linkedin.com/in/samchaffee" }
+exclude: [README.md, CNAME, Gemfile, Gemfile.lock, CLAUDE.md]
+remote_theme: jekyll/minima@4de322363fca
 show_excerpts: true
+minima:
+  skin: bttf
+  social_links:
+    - title: GitHub
+      icon: github
+      url: "https://github.com/samchaffee"
+    - title: Bluesky
+      icon: bluesky
+      url: "https://bsky.app/profile/samchaffee.com"
+    - title: Mastodon
+      icon: mastodon
+      url: "https://indieweb.social/@samchaffee"
+    - title: LinkedIn
+      icon: linkedin
+      url: "https://www.linkedin.com/in/samchaffee"
 plugins:
   - jekyll-sitemap
   - jekyll-remote-theme

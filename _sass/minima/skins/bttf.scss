@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+// Back to the Future skin
+// =======================
+// Dark night-sky background, electric-blue flux-capacitor links,
+// orange fire-trail accents, and neon headings.
+
+// Palette
+$bttf-night:       #0a0a18;  // deep night sky background
+$bttf-night-light: #111128;  // slightly lifted surface (code blocks, tables)
+$bttf-night-mid:   #1a1a38;  // borders, zebra rows
+$bttf-night-soft:  #2a2a55;  // stronger borders, header bg
+
+$bttf-silver:      #c0c0d8;  // main text (DeLorean silver)
+$bttf-white:       #e8e8ff;  // headings
+$bttf-grey:        #7878a0;  // brand / meta text
+
+$bttf-blue:        #00bfff;  // electric blue — flux capacitor (links)
+$bttf-blue-dim:    #5599cc;  // visited links
+$bttf-orange:      #ff8c00;  // fire trails (site title, hover, accents)
+$bttf-yellow:      #ffe033;  // lightning (keywords in syntax)
+$bttf-green:       #39ff88;  // time-circuit green (strings)
+$bttf-red:         #ff4040;  // time-circuit red (errors, deleted)
+$bttf-violet:      #bb88ff;  // types
+
+// Minima color variables
+$brand-color:           $bttf-grey;
+$brand-color-light:     $bttf-night-mid;
+$brand-color-dimmed:    darken($bttf-grey, 15%);
+$brand-color-dark:      $bttf-silver;
+
+$site-title-color:      $bttf-orange;
+
+$heading-color:         $bttf-white;
+$text-color:            $bttf-silver;
+$background-color:      $bttf-night;
+$code-background-color: $bttf-night-light;
+
+$link-base-color:       $bttf-blue;
+$link-visited-color:    $bttf-blue-dim;
+$link-hover-color:      $bttf-orange;
+
+$border-color-01:       $bttf-night-mid;
+$border-color-02:       $bttf-night-soft;
+$border-color-03:       $bttf-grey;
+
+$table-text-color:      $bttf-silver;
+$table-zebra-color:     $bttf-night-light;
+$table-header-bg-color: $bttf-night-soft;
+$table-header-border:   $bttf-night-soft;
+$table-border-color:    $bttf-night-mid;
+
+// Syntax highlighting
+.highlight {
+  .err   { color: #fefeec; background-color: $bttf-red }   // Error
+
+  .c     { color: $bttf-grey }   // Comment
+  .c1    { color: $bttf-grey }
+  .cm    { color: $bttf-grey }
+  .cp    { color: $bttf-grey }
+  .cs    { color: $bttf-grey; font-style: italic }
+
+  .gd    { color: $bttf-red }    // Generic.Deleted
+  .gd .x { color: $bttf-red }
+  .ge    { font-style: italic }   // Generic.Emph
+  .gh    { color: $bttf-grey }    // Generic.Heading
+  .gi    { color: $bttf-green }   // Generic.Inserted
+  .gi .x { color: $bttf-green }
+  .go    { color: $bttf-silver }  // Generic.Output
+  .gp    { color: $bttf-grey }    // Generic.Prompt
+  .gr    { color: $bttf-red }     // Generic.Error
+  .gs    { font-weight: bold }    // Generic.Strong
+  .gt    { color: $bttf-red }     // Generic.Traceback
+  .gu    { color: $bttf-grey }    // Generic.Subheading
+
+  .k     { color: $bttf-yellow }  // Keyword
+  .kc    { color: $bttf-yellow }
+  .kd    { color: $bttf-yellow }
+  .kp    { color: $bttf-yellow }
+  .kr    { color: $bttf-yellow }
+  .kt    { color: $bttf-violet }  // Keyword.Type
+
+  .na    { color: $bttf-blue }    // Name.Attribute
+  .nb    { color: $bttf-yellow }  // Name.Builtin
+  .bp    { color: $bttf-grey }    // Name.Builtin.Pseudo
+  .nc    { color: $bttf-violet }  // Name.Class
+  .ne    { color: $bttf-red }     // Name.Exception
+  .nf    { color: $bttf-blue }    // Name.Function
+  .ni    { color: $bttf-violet }  // Name.Entity
+  .nn    { color: $bttf-violet }  // Name.Namespace
+  .no    { color: $bttf-orange }  // Name.Constant
+  .nt    { color: $bttf-orange }  // Name.Tag
+  .nv    { color: $bttf-blue }    // Name.Variable
+  .vc    { color: $bttf-blue }
+  .vg    { color: $bttf-blue }
+  .vi    { color: $bttf-blue }
+
+  .o     { color: $bttf-white }   // Operator
+  .ow    { color: $bttf-white }
+
+  .m     { color: $bttf-violet }  // Number
+  .mf    { color: $bttf-violet }
+  .mh    { color: $bttf-violet }
+  .mi    { color: $bttf-violet }
+  .il    { color: $bttf-violet }
+  .mo    { color: $bttf-violet }
+
+  .s     { color: $bttf-green }   // String
+  .s1    { color: $bttf-green }
+  .s2    { color: $bttf-green }
+  .sb    { color: $bttf-green }
+  .sc    { color: $bttf-green }
+  .sd    { color: $bttf-green }
+  .se    { color: $bttf-green }
+  .sh    { color: $bttf-green }
+  .si    { color: $bttf-green }
+  .sr    { color: $bttf-blue }
+  .ss    { color: $bttf-orange }
+  .sx    { color: $bttf-green }
+
+  .w     { color: $bttf-grey }    // Whitespace
+
+  .lineno, .gl { color: $bttf-grey }
+  .hll   { background-color: #1a1a40 }
+}

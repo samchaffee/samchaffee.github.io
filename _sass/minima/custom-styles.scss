@@ -1,0 +1,9 @@
+// Neon glow on the site title
+.site-title, .site-title:visited {
+  text-shadow: 0 0 8px #ff8c00, 0 0 20px #ff6600;
+}
+
+// Subtle electric glow on post/page headings
+h1, h2, h3 {
+  text-shadow: 0 0 6px rgba(0, 191, 255, 0.3);
+}
